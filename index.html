@@ -9,6 +9,7 @@
       margin: 0;
       font-family: "Times New Roman", serif;
       display: flex;
+      background-color: #fafafa;
     }
     
     /* Sidebar styles */
@@ -23,9 +24,9 @@
     }
 
     .sidebar img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 150px;          /* width stays the same */
+      height: 200px;         /* taller → creates oval shape */
+      border-radius: 50%;    /* still rounds the edges → becomes oval */
       object-fit: cover;
       border: 3px solid #fff;
       margin-bottom: 15px;
@@ -33,24 +34,42 @@
 
     .sidebar h2 {
       margin: 10px 0 5px;
-      font-size: 1.4em;
+      font-size: 1.8em;
     }
 
     .sidebar p {
-      font-size: 0.95em;
+      font-size: 1.5em;
       margin-bottom: 15px;
       color: #f5f5f5;
+    }
+    .sidebar-news {
+      margin-top: 25px;
+      font-size: 0.9em;
+      line-height: 1.5;
+      color: #f5f5f5;
+      text-align: left;  
+      padding-left: 5px;  
+    }
+
+    .sidebar-news h3 {
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      padding-bottom: 4px;
+    }
+
+    .news-item {
+      margin-bottom: 6px; /* space between entries */
     }
 
     .contact-info {
       margin-top: 20px;
       text-align: left;
-      font-size: 0.9em;
+      font-size: 1.0em;
       line-height: 1.6;
     }
 
     .contact-info a {
-      color: #FFD7D9; /* softer pinkish link tone */
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -64,72 +83,372 @@
       padding: 30px;
       flex: 1;
     }
+
     .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
       font-size: 24px;
+      color: #333;
     }
+
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  flex: 1.2;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #222;
+}
+
+.about-text a {
+  color: #002efd;
+  text-decoration: none;
+}
+
+.about-text a:hover {
+  text-decoration: underline;
+}
+
+/* horizontal image layout */
+.about-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+}
+
+.about-images img {
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+/* responsive behavior */
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+  }
+  .about-images {
+    flex-wrap: wrap;
+  }
+  .about-images img {
+    width: 48%;
+  }
+}
 
   </style>
 </head>
 <body>
 
   <div class="sidebar">
-    <img src="your-photo.jpg" alt="Your Photo">
+    <img src="images/my_image.jpg" alt="Your Photo">
     <h2>Kai-Lin Chen</h2>
 
     <div class="contact-info">
-      📧 <a href="mailto:kailinchen0929@gmail.com">kailinchen0929@gmail.com</a><br>
-      🔗 <a href="https://github.com/Hiimtiger" target="_blank">GitHub</a><br>
-      💼 <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a><br>
+      • <a href="mailto:kailinchen0929@gmail.com">kailinchen0929@gmail.com</a><br>
+      • <a href="files/CV_Kai-Lin_Chen.pdf">CV</a><br>
+      • <a href="https://scholar.google.com/citations?user=3LeGLPwAAAAJ&hl=en">Google Scholar</a><br>
+      • <a href="https://github.com/Hiimtiger" target="_blank">GitHub</a><br>
+      • <a href="https://www.linkedin.com/in/kai-lin-chen-0660182ba/" target="_blank">LinkedIn</a><br>
+    </div>
+    
+    <div class="sidebar-news">
+      <h3><strong>[News]</strong></h3>
+        <div class="news-item"><strong>[Aug 2025]</strong> My project at RCAS, Academia Sinica recieved 2nd place in undergrad intern seminar!</div>
+        <div class="news-item"><strong>[Jul 2025]</strong> My proposal recieved the NSTC Undergrad research fellowship!</div>
+        <div class="news-item"><strong>[Jul 2025]</strong> PAULow was presented at MIDL 2025 in Salt Lake City!</div>
+        <div class="news-item"><strong>[Jul 1 2025]</strong> Started Internship @ RCAS, Academia Sinica!</div>
+        <div class="news-item"><strong>[May 2025]</strong> Research published at MIDL 2025. Check it out!</div>
     </div>
   </div>
+  
+  
 
   <div class="content">
-    <p>Hello! I am currently a senior student at <a href="https://www.ntu.edu.tw/english/">National Taiwan University</a> majoring in Biomedical Engineering, also an undergraduate researcher at <a href="https://sites.google.com/view/mmio-lab">MMIO Lab</a> adivsed by <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Dr. Kevin T. Chen</a></p>
-    <p>My research focuses on using deep-learning methods for medical image analysis, including
-  segmentation, classification, and multimodal fusion...etc. I am especially interested in
-  <strong>data- and compute-efficient training strategies</strong> that can allow models to generalize when using limited labeled data or GPU resources for diverse clinical settings. (Low-resource training strategies)</p>
-    <h2>Projects</h2>
-    
-<table style="width:100%; border-collapse: collapse;">
-  <tr onmouseout="nexf_stop()" onmouseover="nexf_start()">
-    <td style="padding:16px;width:20%;vertical-align:middle">
-      <div class="one" style="position: relative;">
-        <div class="two" id="nexf_image" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
-          <img src="images/A_293_predicted.png" width="90%">
+
+<div class="about-section">
+  <div class="about-text">
+    <p>Hello! I am currently a senior student at 
+      <a href="https://www.ntu.edu.tw/english/">National Taiwan University</a> 
+      majoring in Biomedical Engineering, advised by 
+      <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Dr. Kevin T. Chen</a>
+      in the 
+      <a href="https://sites.google.com/view/mmio-lab">Multimodal Medical Imaging Optimization Lab</a>.
+    </p>
+
+    <p>My research focuses on using deep-learning methods for medical image analysis, including segmentation, classification, 
+      and multimodal fusion... etc. I am especially interested in <strong>data- and compute-efficient training strategies </strong> 
+      <em>(low-resource training strategies)</em>
+      that allow models to generalize with limited labeled data or trainable using limited computing resources for diverse clinical settings.</p>
+  </div>
+  <div class="about-images">
+    <img src="images/brain_before.png"> 
+    <img src="images/flashtalk_gif.gif">
+  </div>
+  
+</div>
+
+<p><strong>Keywords: </strong>Medical image analysis, Segmentation, Computer Vision, Probabilistic Modeling, Low-resource training methods </p>
+<h2>Research</h2>
+
+<table class="project-table" style="width:100%; border-collapse: collapse;">
+  
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/paulow_before.png" width="90%">
         </div>
-        <img src="images/A_293_grid.png" width="90%">
+        <img src="images/paulow_before.png" width="90%">
       </div>
     </td>
 
-    <td style="padding:8px;width:80%;vertical-align:middle">
-      <a href="https://m-niemeyer.github.io/nexf/">
-        <span class="papertitle">FICM: Force Informed Cell Map Image Synthesis using Attention-gated Dual Encoder U-Net</span>
-      </a>
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>PAULow: A Low-Resource Training Strategy for Cell Segmentation using Patch-Based Attention U-Net</strong></a>
       <br>
-      <strong>Kai-Lin Chen</strong>,
+      <strong>Kai-Lin Chen</strong>, Yu-Nong Lin, 
+      <a href="https://sites.google.com/view/chao-lab/home">Pen-Hsiu Grace Chao</a>, 
+      <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Kevin T. Chen</a>
+      <br>
+      <em>MIDL</em> 2025
+      <br>
+      <a href="files/paulow_paper.pdf" target="_blank">Paper</a> /
+      <a href="https://openreview.net/forum?id=tbjpQbcIxW" target="_blank">OpenReview</a> /
+      <a href="files/paulow_poster.pdf" target="_blank">Poster</a> /
+      <a href="https://github.com/Hiimtiger/PAULow" target="_blank">Code</a>
+      <p style="margin-top:8px;">
+        We propose an offline training pipeline requiring only tens of samples with patch-based preprocessing, 
+        Attention U-Net, and a <a href="https://github.com/Hiimtiger/PAULow?tab=readme-ov-file#dynamic-loss-function-selection-method"><strong>Dynamic loss function selection strategy</strong></a>. 
+        Our method improves image segmentation performance by 32.60% and 35.62% over Stardist and Cellpose, 
+        respectively, using the same amount of training samples without the need of large-scale pre-training.
+      </p>
+    </td>
+  </tr>
+
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/ficm_after.png" width="90%">
+        </div>
+        <img src="images/ficm_before.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>FICM: Force Informed Cell Map Image Synthesis using Attention-gated Dual Encoder U-Net for Carcinoma Cell Line Classification</strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>, Chun-Pei Shih, You-Jhu Huang, Di-Yen Chueh, Xiao-Fang Tang, 
       <a href="https://www.rcas.sinica.edu.tw/faculty/peilin.html">Peilin Chen</a>
       <br>
       <em>RCAS Summer Internship Seminar, Academia Sinica</em>, 2025
       <br>
-      <span style="color: red; font-weight: bold;">
-        (2nd place in the division of Intelligence Bioengineering Group.)
-      </span>
+      <span style="color: red; font-weight: bold;">(2nd place in the division of Intelligence Bioengineering Group.)</span>
       <br>
-      <a href="https://m-niemeyer.github.io/nexf/">Poster</a> /
-      <a href="https://arxiv.org/abs/2510.08279">Flashtalk Presentation</a> /
-      <a href="https://github.com/Hiimtiger/FICM">Code & Project Description/Analysis</a>
-      <p>A new deep learning-based medical image modality that combined a cell's morphological feature using fluorescence signals with its internal force gradients captured with force-sensing chips. Able to enhance classification accuracy by 37.67% compared to unprocessed modalities.</p>
+      <a href="files/ficm_poster.pdf" target="_blank">Poster</a> /
+      <a href="files/ficm_ft.gif" target="_blank">Flashtalk Presentation</a> /
+      <a href="https://github.com/Hiimtiger/FICM" target="_blank">Code & Project Description</a>
+      <p style="margin-top:8px;">We propose a new deep learning-based medical image modality combining cellular morphology (fluorescence) 
+        and internal force gradients. Our fusion modality is able to enhance adenocarcinoma cell lines (HCC827 & A549) classification accuracy by 37.67% 
+        compared to unprocessed modalities.</p>
     </td>
   </tr>
+
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/haralick_after.png" width="90%">
+        </div>
+        <img src="images/haralick_before.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>Unsupervised Segmentation of Pathology Images using Haralick Features</strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>, Cheng-Yang Yu
+      <br>
+      <em>Fundamentals of Biomedical Image Processing DBME5018</em>, 2024 Fall
+      <br>
+      <a href="files/haralick_proposal.pdf" target="_blank">Project Proposal</a> /
+      <a href="files/haralick_presentation.pdf" target="_blank">Project Presentation</a> /
+      <a href="files/haralick_report.pdf" target="_blank">Final Report</a>
+      <p style="margin-top:8px;">
+        Used Haralick texture features to cluster/segment pathology images without labeled data, enabling adaptive 
+        multi-class segmentation by inferring the number of clusters with inertia. This approach accelerates diagnostic 
+        workflows and offers a scalable solution for clinical labeling in resource-limited settings.
+      </p>
+    </td>
+  </tr>
+
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/brain_after.png" width="90%">
+        </div>
+        <img src="images/brain_before.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>Brain Tumor Segmentation from MRI using Patch-Based Attention U-Net for Data-Efficient 
+        Learning</strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>, Cheng-Yang Yu, 
+      <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Kevin T. Chen</a>
+      <br>
+      <em>Medical Image Analysis DBME5030</em>, 2025 Spring
+      <br>
+      <a href="files/brain_low_data.pdf" target="_blank">Final Presentation</a> 
+      <p style="margin-top:8px;">
+        Adapted <a href="https://github.com/Hiimtiger/PAULow">PAULow</a>'s segmentation pipeline to the BraTS brain tumor dataset, 
+        maintaining low-resource and data-efficient training strategies. Demonstrated higher performance over other U-Net 
+        structures under both standard and limited data conditions (30 vs. 300 cases).
+      </p>
+    </td>
+  </tr>
+
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/finetune_paulow.png" width="90%">
+        </div>
+        <img src="images/finetune_paulow.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>Finetuning Existing Models Trained using PAULow for better Generalization Across Different Microscopy Instruments</strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>,
+      <a href="https://sites.google.com/view/chao-lab/home">Pen-Hsiu Grace Chao</a>, 
+      <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Kevin T. Chen</a>
+      <br>
+      <a href="files/finetune_paulow.pdf" target="_blank">Presentation</a> /
+      <a href="https://github.com/Hiimtiger/PAULow" target="_blank">Code</a>
+      <p style="margin-top:8px;">
+        We propose an offline model finetuning pipeline (integrated within PAULow) that enabled model generalization accross different microscopy instruments 
+        after the model is trained by freezing half of the layers, making it more robust accross different imaging instruments and 
+        environments for various segmentation tasks.
+      </p>
+    </td>
+  </tr>
+  
 </table>
 
 <script type="text/javascript">
-  function nexf_start() {
-    document.getElementById('nexf_image').style.opacity = "1";
+  // hover effect functions
+  function nexf_start(row) {
+    const img = row.querySelector('.two');
+    if (img) img.style.opacity = "1";
+  }
+  function nexf_stop(row) {
+    const img = row.querySelector('.two');
+    if (img) img.style.opacity = "0";
   }
 
-  function nexf_stop() {
-    document.getElementById('nexf_image').style.opacity = "0";
-  }
-  nexf_stop();
+  // hide all overlay images initially
+  document.querySelectorAll('.two').forEach(el => el.style.opacity = "0");
 </script>
+
+<h2>Other Projects</h2>
+
+<table class="project-table" style="width:100%; border-collapse: collapse;">
+  
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/ficm_after.png" width="90%">
+        </div>
+        <img src="images/ficm_before.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>Blood Clot Formation Modeling with LAMMPs: 
+        Thrombosis v.s. Hydrodynamic stress in molecular simulations.</strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>.   
+      <strong>Advisor: </strong> Shu-Wei Chang, Chia-Ching Chou. 
+      <br>
+      <a href="" target="_blank">Project Proposal</a> /
+      <a href="" target="_blank">Final Presentation</a> /
+      <a href="" target="_blank">Video</a>
+      <p style="margin-top:8px;"> 
+        
+      </p>
+    </td>
+  </tr>
+
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/ai_sleeper_assistant_after.png" width="90%">
+        </div>
+        <img src="images/ai_sleeper_assistant_before.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong>AI Sleeper Assistant: Pitching a Hypothetical Medical Device </strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>, Yu-Lin Chu, Yin-Hsi Li, Tzu-Yu Huang, Chai-Ching Lin
+      <br>
+      <em>Medical Device Innovation and Design DBME3002</em>, 2025 Fall
+      <br>
+      <span style="color: red; font-weight: bold;">(Best Video Advertisement in class.)</span>
+      <br>
+      <a href="files/ai_sleeper_assistant.pdf" target="_blank">Presentation</a> /
+      <a href="https://youtu.be/vZrdw_qBpQQ" target="_blank">Advertisement Video</a> 
+      <p style="margin-top:8px;">
+        Collaborated with peers to pitch a hypothetical medical device that is able to analyze brain waves and 
+        apply micro-currents to adjust brain waves into sleeping frequencies with sleeping cycle analyses and alerting system.
+      </p>
+    </td>
+  </tr>
+
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+    <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
+      <div class="image-container" style="position: relative;">
+        <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
+          <img src="images/coffee_machine_graph.png" width="90%">
+        </div>
+        <img src="images/coffee_machine_graph.png" width="90%">
+      </div>
+    </td>
+
+    <td class="project-info" style="padding:8px;width:80%;vertical-align:middle;">
+      <a class="papertitle"><strong> Is Buying a Coffee Machine Worth It? A Case Study in MMIO Lab.</strong></a>
+      <br>
+      <strong>Kai-Lin Chen</strong>.   
+      <br>
+      <em>Weekly MMIO Lab Meeing</em>, March 1st 2025
+      <br>
+      <a href="files/case_study_coffee_machine.pdf" target="_blank"> Presentation Slides</a>
+
+      <p style="margin-top:8px;"> 
+        A case study of finding whether buying a family-sized coffee machine is better than other methods of caffiene 
+        purchases (convienence stores, starbucks...etc). Presented during lab meeting and raised about 1500 NTD (50 USD) 
+        from lab members to buy a communal coffee machine that costs 2250 NTD (about 72 USD).
+      </p>
+    </td>
+  </tr>
+  
+</table>
+
+  </div>
+</body>
+</html>
