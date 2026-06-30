@@ -1,219 +1,161 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kai-Lin Chen</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Times New Roman", serif;
-      display: flex;
-      background-color: #fafafa;
-    }
-    
-    /* Sidebar styles */
-    .sidebar {
-      width: 250px;
-      background-color: #750014; 
-      color: white;
-      height: 100vh;
-      padding: 30px 20px;
-      position: fixed;
-      text-align: center;
-    }
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    .sidebar img {
-      width: 150px;          /* width stays the same */
-      height: 200px;         /* taller → creates oval shape */
-      border-radius: 50%;    /* still rounds the edges → becomes oval */
-      object-fit: cover;
-      border: 3px solid #fff;
-      margin-bottom: 15px;
-    }
+    <title>Kai-Lin Chen</title>
+    <meta name="author" content="Kai-Lin (Tobias) Chen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .sidebar h2 {
-      margin: 10px 0 5px;
-      font-size: 1.8em;
-    }
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-    .sidebar p {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-      color: #f5f5f5;
-    }
-    .sidebar-news {
-      margin-top: 25px;
-      font-size: 0.9em;
-      line-height: 1.5;
-      color: #f5f5f5;
-      text-align: left;  
-      padding-left: 5px;  
-    }
 
-    .sidebar-news h3 {
-      margin-bottom: 10px;
-      font-size: 1.3em;
-      padding-bottom: 4px;
-    }
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+      a { color: #1772d0; text-decoration: none; }
+      a:focus, a:hover { color: #f09228; text-decoration: none; }
+      .name { font-size: 32px; margin: 0 0 12px 0; }
+      .papertitle { font-weight: 700; }
+      .highlight { background-color: #ffffd0; }
+      .section-heading { padding:16px;width:100%;vertical-align:middle; }
+      .project-image { width: 100%; max-width: 160px; border-radius: 4px; }
+      .profile-photo { width:100%; max-width:100%; object-fit:cover; border-radius:0%; }
+    </style>
+  </head>
 
-    .news-item {
-      margin-bottom: 6px; /* space between entries */
-    }
+<script>
+  function toggleNews() {
+    var more = document.getElementById("moreNews");
+    var btn = document.getElementById("newsBtn");
 
-    .contact-info {
-      margin-top: 20px;
-      text-align: left;
-      font-size: 1.0em;
-      line-height: 1.6;
+    if (more.style.display === "none") {
+        more.style.display = "block";
+        btn.innerHTML = "Show Less ▲";
+    } else {
+        more.style.display = "none";
+        btn.innerHTML = "Show More ▼";
     }
-
-    .contact-info a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    /* Main content */
-    .content {
-      margin-left: 300px;
-      padding: 30px;
-      flex: 1;
-    }
-
-    .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-      font-size: 24px;
-      color: #333;
-    }
-
-.about-section {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 30px;
-  margin-bottom: 40px;
 }
+</script>
 
-.about-text {
-  flex: 1.2;
-  font-size: 17px;
-  line-height: 1.5;
-  color: #222;
-}
 
-.about-text a {
-  color: #002efd;
-  text-decoration: none;
-}
+  <body>
+    <table style="width:100%;max-width:1050px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
 
-.about-text a:hover {
-  text-decoration: underline;
-}
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:70%;vertical-align:middle">
+                <p class="name" style="text-align:center;">
+                  Kai-Lin (Tobias) Chen
+                </p>
 
-/* horizontal image layout */
-.about-images {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: nowrap;
-  margin-top: 10px;
-}
+                <p>
+                  Hello! I am an incoming Masters student at
+                  Cornell University,
+                  majoring in Eletrical and Computer Engineering! 
+                </p>
 
-.about-images img {
-  width: 45%;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  object-fit: cover;
-}
+                <p>
+                  My research interests lies in computer vision and deep learning for healthcare, 
+                  with a focus on segmentation, classification, and multimodal fusion for medical image analysis. 
+                  I am especially interested in developing data- and compute-efficient training strategies that 
+                  enable robust performance under limited annotation or computing resource constraints for various tasks.
+                </p>
 
-/* responsive behavior */
-@media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-  }
-  .about-images {
-    flex-wrap: wrap;
-  }
-  .about-images img {
-    width: 48%;
-  }
-}
+                <p>
+                  I had the priviledge to work with <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Dr. Kevin T. Chen</a> 
+                  in the <a href="https://sites.google.com/view/mmio-lab">Multimodal Medical Imaging Optimization Lab</a> back at National Taiwan University on medical image
+                  segmentation, image reconstruction (full-dose PET reconstruction) and modality fusion projects!
+                </p>
 
-  </style>
-</head>
-<body>
+                <p>
+                  <strong>Keywords:</strong> Medical image analysis, Segmentation, Computer Vision, Probabilistic Modeling, Low-resource training methods 
+                </p>
 
-  <div class="sidebar">
-    <img src="images/my_image.jpg" alt="Your Photo">
-    <h2>Kai-Lin Chen</h2>
+                <p style="text-align:center">
+                  <a href="mailto:kailinchen0929@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a href="files/CV_Kai-Lin_Chen.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=3LeGLPwAAAAJ&hl=en"> Google Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://www.linkedin.com/in/kai-lin-chen-0660182ba/">LinkedIn</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/Hiimtiger">Github</a>
+                </p>
+              </td>
 
-    <div class="contact-info">
-      • <a href="mailto:kailinchen0929@gmail.com">kailinchen0929@gmail.com</a><br>
-      • <a href="files/CV_Kai-Lin_Chen.pdf">CV</a><br>
-      • <a href="https://scholar.google.com/citations?user=3LeGLPwAAAAJ&hl=en">Google Scholar</a><br>
-      • <a href="https://github.com/Hiimtiger" target="_blank">GitHub</a><br>
-      • <a href="https://www.linkedin.com/in/kai-lin-chen-0660182ba/" target="_blank">LinkedIn</a><br>
-    </div>
-    
-    <div class="sidebar-news">
-      <h3><strong>[News]</strong></h3>
-        <div class="news-item"><strong>[Aug 2025]</strong> My project at RCAS, Academia Sinica recieved 2nd place in undergrad intern seminar!</div>
-        <div class="news-item"><strong>[Jul 2025]</strong> My proposal recieved the NSTC Undergrad research fellowship!</div>
-        <div class="news-item"><strong>[Jul 2025]</strong> PAULow was presented at MIDL 2025 in Salt Lake City!</div>
-        <div class="news-item"><strong>[Jul 1 2025]</strong> Started Internship @ RCAS, Academia Sinica!</div>
-        <div class="news-item"><strong>[May 2025]</strong> Research published at MIDL 2025. Check it out!</div>
-    </div>
-    <div class="sidebar-news">
-      <div class=""news-item>Last Updated: Nov 25, 2025</div>
-    </div>
-  </div>
-  
-  
+              <td style="padding:2.5%;width:30%;max-width:30%">
+                <a href="images/my_image.jpg">
+                  <img class="profile-photo" alt="profile photo" src="images/my_image.jpg">
+                </a>
+              </td>
+            </tr>
+          </tbody></table>
 
-  <div class="content">
+          <!-- =========================
+               NEWS SECTION
+               Copy-paste one <li>...</li> line for each new update.
+          ========================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td class="section-heading">
+                <h2>News</h2>
+                <ul class="news-list">
+                  <li>[06/2026] PAULow recieved second place in <a href="https://webpageprodvm.ntu.edu.tw/ntudbme/News_Content.aspx?n=65447&s=263332">
+                    Undergraduate Capstone Project Seminar</a> at National Taiwan University!</li>
+                  <li>[08/2025] My project at RCAS, Academia Sinica recieved 2nd place in undergrad intern seminar!</li>
+                  <li>[07/2025] My proposal on establishing SAM finetuning pipeline for any medical image segmentation 
+                      recieved the NSTC Undergrad research fellowship!</li>
+                  <li>[07/2025] PAULow was presented at MIDL 2025 in Salt Lake City!</li>
 
-<div class="about-section">
-  <div class="about-text">
-    <p>Hello! I am currently a senior student at 
-      <a href="https://www.ntu.edu.tw/english/">National Taiwan University</a> 
-      majoring in Biomedical Engineering, advised by 
-      <a href="https://sites.google.com/view/mmio-lab/members?authuser=0">Dr. Kevin T. Chen</a>
-      in the 
-      <a href="https://sites.google.com/view/mmio-lab">Multimodal Medical Imaging Optimization Lab</a>.
-    </p>
+                  <div id="moreNews" style="display:none;">
+                    <li>[07/2025] Started Internship @ RCAS, Academia Sinica! I will be working with 
+                      <a href="https://www.rcas.sinica.edu.tw/web/mem_faculty/Chen_Peilin_en.html">Dr. Peilin Chen</a> this summer!</li>
+                    <li>[05/2025] Research published at MIDL 2025. Check it out!</li>
+                  </div>
+                </ul>
+                <button id="newsBtn" onclick="toggleNews()">
+                  Show More ▼
+                </button>
+              </td>
+            </tr>
+          </tbody></table>
 
-    <p>My research interests lies in computer vision and deep learning for healthcare, with a focus on segmentation, classification, 
-      and multimodal fusion for medical image analysis. I am especially interested in developing data- and compute-efficient training 
-      strategies that enable robust performance under limited annotation or computing resource constraints for various tasks. </p>
-    <p>I'm currently working on anatomy-aware low-dose to full-dose PET reconstruction. 
-      Since Alzheimer's disease patients' PET scans lack strong anatomical boundaries especially in low-dose scenarios, 
-      I'm integrating MRI-based structural context so the model can preserve regions like the hippocampus 
-      and medial temporal lobe during full-dose image generation!</p>
-  </div>
-  <div class="about-images">
-    <img src="images/pet.png"> 
-    <img src="images/flashtalk_gif.gif">
-  </div>
-  
-</div>
+          <!-- =========================
+               PROJECTS / RESEARCH SECTION INTRO
+          ========================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td class="section-heading">
+                <h2>Projects</h2>
+                <p>
+                  I am interested in YOUR BROAD RESEARCH INTERESTS. Selected projects are listed below.
+                  Projects with a pale yellow background are <span class="highlight">highlighted</span>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
 
-<p><strong>Keywords: </strong>Medical image analysis, Segmentation, Computer Vision, Probabilistic Modeling, Low-resource training methods </p>
-<h2>Research</h2>
+          <!-- =========================
+               PROJECT LIST
+               To add a new project:
+               1. Copy everything from PROJECT BLOCK START to PROJECT BLOCK END.
+               2. Paste it below another project block.
+               3. Replace every ALL CAPS placeholder.
+          ========================== -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-<table class="project-table" style="width:100%; border-collapse: collapse;">
-  
-  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)" bgcolor="#ffffd0">
     <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
       <div class="image-container" style="position: relative;">
         <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
-          <img src="images/paulow_before.png" width="90%">
+          <img src="images/paulow_before.png" width="100%">
         </div>
-        <img src="images/paulow_before.png" width="90%">
+        <img src="images/paulow_before.png" width="100%">
       </div>
     </td>
 
@@ -238,8 +180,8 @@
       </p>
     </td>
   </tr>
-
-  <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)">
+  
+    <tr class="project-row" onmouseover="nexf_start(this)" onmouseout="nexf_stop(this)" bgcolor="#ffffd0">
     <td class="project-image-cell" style="padding:16px;width:20%;vertical-align:middle;">
       <div class="image-container" style="position: relative;">
         <div class="overlay two" style="position: absolute; top: 0; left: 0; width: 100%; transition: opacity 0.5s;">
@@ -461,6 +403,11 @@
   
 </table>
 
-  </div>
-</body>
+
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
 </html>
